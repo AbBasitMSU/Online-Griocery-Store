@@ -20,9 +20,8 @@ Please use Browser for testing.
 
 Instructions for Running:
 ----------------------------
-Go to the command prompt and enter into the directory using cd <directory location>
-
-then enter below command and wait for the local host address to appea
+Go to the command prompt and enter into the directory using cd <directory location> and then into the sub folder of the project called OnlineGroceryStore and
+then enter below command and wait for the local host address to appear
 
 python manage.py runserver
 
