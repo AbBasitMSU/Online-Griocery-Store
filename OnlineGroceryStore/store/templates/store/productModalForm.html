@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<div id="{{ modalId }}" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">{{ title }}</h4>
+            </div>
+            <div class="modal-body">
+                <form method="post" role="form" id="product_{{ ix }}" class="form-horizontal text-left">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="col-sm-2 col-sm-offset-2">
+                            <label for="productName_{{ ix }}" class="control-label">Product Name</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="productName_{{ ix }}" name='productName'
+                                   placeholder="Product Name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 col-sm-offset-2">
+                            <label for="productCategory_{{ ix }}" class="control-label">Category</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input type="text" class="form-control" id="productCategory_{{ ix }}" name='productCategory'
+                                   placeholder="Product Category" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 col-sm-offset-2">
+                            <label for="productSize_{{ ix }}" class="control-label">Product Size</label>
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="text" class="form-control" id="productSize_{{ ix }}" name='productSize'
+                                   placeholder="Product Size" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 col-sm-offset-2">
+                            <label for="additionalInfo_{{ ix }}" class="control-label">Addn. Info</label>
+                        </div>
+                        <div class="col-lg-4">
+                            <textarea rows="5" style="resize: none" class="form-control" id="additionalInfo_{{ ix }}" name='additionalInfo'
+                                      placeholder="Additional Info" maxlength="3999"
+                                      required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 col-sm-offset-2">
+                            <label for="imageLocation_{{ ix }}" class="control-label">imageLocation</label>
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="url" class="form-control" id="imageLocation_{{ ix }}" name='imageLocation'
+                                   placeholder="Image Location/URL"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 col-sm-offset-2">
+                            <label for="stateName_{{ ix }}" class="control-label">State Name</label>
+                        </div>
+                        <div class="col-lg-4">
+                            <select class="form-control" id="stateName_{{ ix }}" name='stateName' required>
+                                <option value="CG">Chandigarh</option>
+                                <option value="DL">Delhi</option>
+                                <option value="GA">Goa</option>
+                                <option value="HR">Haryana</option>
+                                <option value="JK">Jammu and Kashmir</option>
+                                <option value="MH">Maharashtra</option>
+                                <option value="UP">Uttar Pradesh</option>
+                                <option value="WB">West Bengal</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 col-sm-offset-2">
+                            <label for="price_{{ ix }}" class="control-label">Price in Rs</label>
+                        </div>
+                        <div class="col-lg-4">
+                            <input type="text" class="form-control" id="price_{{ ix }}" name='price'
+                                   placeholder="Price" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-2 col-sm-offset-2">
+                            <label for="priceUnit_{{ ix }}" class="control-label">Price Per</label>
+                        </div>
+                        <div class="col-lg-4">
+                            <label> <input type="radio" class="form-control radio-inline" id="priceUnit_1{{ ix }}"
+                                           name='priceUnit_{{ ix }}'
+                                           placeholder="priceUnit" value="0" required> Per KG</label>
+                            <label> <input type="radio" class="form-control radio-inline" id="priceUnit_2{{ ix }}"
+                                           name='priceUnit_{{ ix }}'
+                                           placeholder="priceUnit" value="1" required> Per Unit</label>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-default" id={{ submitId }}>Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
